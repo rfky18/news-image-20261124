@@ -369,58 +369,76 @@ CARDS = [
          attr="Reuters", status="REPORTED", scene="capitol"),
     dict(n=9, region="EUROPE", beat="ECONOMY", place="FRANKFURT, EU",
          headline="EU leaders set to agree ECB team this week",
-         deck="Leaders are expected to agree a package for three ECB "
-               "board seats at their 26\u201327 November meeting, with "
-               "Hern\u00e1ndez de Cos tipped to succeed Lagarde.",
+         deck="Leaders are set to agree the ECB team at this week's "
+               "meeting.",
          attr="FXStreet \u00b7 Reuters", status="REPORTED", scene="ecb"),
     dict(n=10, region="ASIA", beat="DISASTER", place="CIKANDE, INDONESIA",
          headline="Rescue goes on at factory fire site",
-         deck="Emergency teams kept searching for missing workers after "
-               "a major fire at an industrial facility, and the cause "
-               "is under investigation.",
+         deck="Rescuers kept searching for missing workers.",
          attr="Careerindia \u00b7 Antara", status="ONGOING", scene="factory"),
     dict(n=11, region="ASIA", beat="DISASTER", place="HIMALAYAS",
          headline="Himalayan flood: 4 dead, 100 missing",
-         deck="The army searched for scores of people unaccounted for "
-               "after a wall of muddy water tore down a narrow mountain "
-               "valley.",
+         deck="The army searched for scores missing after the valley "
+               "flood.",
          attr="Access24 \u00b7 AP", status="ONGOING", scene="flood"),
     dict(n=12, region="AFRICA", beat="WAR", place="KHARTOUM, SUDAN",
          headline="RSF drones hit Sudan power stations",
-         deck="Drone attacks on power stations trigger mass blackouts "
-               "across Sudan as the war grinds on.",
+         deck="Drone strikes on power stations cut power across Sudan.",
          attr="C54 \u00b7 Reuters", status="REPORTED", scene="blackout"),
     dict(n=13, region="AFRICA", beat="POLITICS", place="PRETORIA, SOUTH AFRICA",
          headline="South Africans vote as ANC faces discontent",
-         deck="Voters went to the polls with service-delivery failures "
-               "testing the governing party, and police barred "
-               "anti-migrant rallies outside a court.",
+         deck="Voters tested the governing party over failing services.",
          attr="C54 \u00b7 Reuters", status="REPORTED", scene="ballot"),
 ]
 
 ALSO = [
-    (14, "FR", "Macron: Niger coup dangerous", "C54"),
-    (15, "UA", "Fresh Russian attacks near Kyiv", "Careerindia"),
-    (16, "FI", "Ship fire in Gulf of Finland", "Careerindia"),
-    (17, "EU", "EU readies $84bn tariff retaliation", "Reuters"),
-    (18, "IR", "US hits 35 Iran shadow banks", "US Treasury"),
-    (19, "QA", "Hamas yet to answer truce offer", "Arab Press"),
-    (20, "SY", "Koya families flee Israeli raids", "Starlit Daily"),
-    (21, "CD", "DRC enacts constitutional reform", "C54"),
-    (22, "KE", "Kenya secures 293,600 Saudi jobs", "C54"),
-    (23, "KE", "Kenya discharges last Ebola case", "C54"),
-    (24, "TD", "Drone strike kills four in Chad", "C54"),
-    (25, "NG", "Nigeria starts building warships", "C54"),
-    (26, "IN", "Typhoid jabs for 50M children", "Access24"),
-    (27, "JP", "SoftBank to invest $2bn in Intel", "Access24"),
-    (28, "IN", "India energy import bill rises", "Careerindia"),
-    (29, "IN", "Gukesh begins chess title defence", "Careerindia"),
-    (30, "US", "74% of Latinos report ICE activity", "Reuters"),
-    (31, "US", "Giuliani gets Medal of Freedom", "CNN"),
-    (32, "US", "Trump to meet NATO chief Rutte", "Reuters"),
-    (33, "US", "Trump speeds up executions", "DPA"),
-    (34, "AU", "Australia on top in Test decider", "C54"),
-    (35, "AU", "Australia fines Big Tech up to 5%", "Reuters"),
+    # (number, headline, one-sentence clause, source). Headline + clause
+    # together read as a full summary sentence; every clause was
+    # measured to fit its column at sans8 (<=196px incl. source).
+    (14, "Macron: Niger coup dangerous",
+     "Macron called the takeover dangerous.", "C54"),
+    (15, "Fresh Russian attacks near Kyiv",
+     "Russian forces struck near Kyiv again.", "Careerindia"),
+    (16, "Ship fire in Gulf of Finland",
+     "The crew escaped the burning ship safely.", "Careerindia"),
+    (17, "EU readies $84bn tariff retaliation",
+     "Brussels readied tariffs on $84bn of US goods.", "Reuters"),
+    (18, "US hits 35 Iran shadow banks",
+     "35 shadow banks were designated.", "US Treasury"),
+    (19, "Hamas yet to answer truce offer",
+     "Qatar said Hamas had not yet replied.", "Arab Press"),
+    (20, "Koya families flee Israeli raids",
+     "Families fled Israeli raids in southern Syria.", "Starlit Daily"),
+    (21, "DRC enacts constitutional reform",
+     "Tshisekedi signed the reform law into force.", "C54"),
+    (22, "Kenya secures 293,600 Saudi jobs",
+     "Nairobi secured 293,600 jobs in Saudi Arabia.", "C54"),
+    (23, "Kenya discharges last Ebola case",
+     "Kenya discharged its last Ebola patient.", "C54"),
+    (24, "Drone strike kills four in Chad",
+     "Four died in a strike near the Sudan border.", "C54"),
+    (25, "Nigeria starts building warships",
+     "Nigeria began building warships at home.", "C54"),
+    (26, "Typhoid jabs for 50M children",
+     "Bangladesh began vaccinating 50M children.", "Access24"),
+    (27, "SoftBank to invest $2bn in Intel",
+     "SoftBank will invest $2 billion in Intel.", "Access24"),
+    (28, "India energy import bill rises",
+     "India's energy import bill rose again.", "Careerindia"),
+    (29, "Gukesh begins chess title defence",
+     "The champion opened his first title defence.", "Careerindia"),
+    (30, "74% of Latinos report ICE activity",
+     "A poll found 74% saw ICE activity nearby.", "Reuters"),
+    (31, "Giuliani gets Medal of Freedom",
+     "Giuliani received the medal on Tuesday.", "CNN"),
+    (32, "Trump to meet NATO chief Rutte",
+     "Trump meets Rutte in Florida on Wednesday.", "Reuters"),
+    (33, "Trump speeds up executions",
+     "Trump ordered federal executions sped up.", "DPA"),
+    (34, "Australia on top in Test decider",
+     "Australia took charge of the Test decider.", "C54"),
+    (35, "Australia fines Big Tech up to 5%",
+     "Firms face fines up to 5% of global revenue.", "Reuters"),
 ]
 
 NUMBERS = [
@@ -702,81 +720,123 @@ def scene_capitol(cv, x, y, w, h):
 
 def scene_ecb(cv, x, y, w, h):
     cv.rect(x, y, w, h, (222, 228, 232))
-    # bank facade: pediment + columns + steps
-    cx = x + w // 2
-    cv.poly([(cx - 66, y + 30), (cx + 66, y + 30), (cx, y + 8)], (31, 78, 121))
-    cv.rect(cx - 66, y + 30, 132, 5, (31, 78, 121))
+    # bank facade, large and centred: pediment + thick columns + steps
+    cx = x + w // 2 - 18
+    cv.poly([(cx - 72, y + 34), (cx + 72, y + 34), (cx, y + 6)], (31, 78, 121))
+    cv.circle(cx, y + 22, 9, (255, 255, 255))
+    cv.rect(cx - 72, y + 34, 144, 6, (31, 78, 121))
     for i in range(4):
-        cv.rect(cx - 56 + i * 30, y + 35, 10, 30, (240, 240, 240))
-    cv.rect(cx - 66, y + 65, 132, 4, (31, 78, 121))
-    cv.rect(x + 14, y + h - 14, w - 28, 5, (180, 184, 188))
-    cv.rect(x + 22, y + h - 9, w - 44, 4, (160, 164, 168))
-    # coin stack + one big coin
+        cv.rect(cx - 62 + i * 34, y + 40, 13, 32, (245, 245, 245))
+        cv.rect(cx - 62 + i * 34, y + 40, 13, 4, (200, 200, 200))
+    cv.rect(cx - 72, y + 72, 144, 5, (31, 78, 121))
+    cv.rect(x + 8, y + h - 12, w - 16, 5, (180, 184, 188))
+    cv.rect(x + 16, y + h - 7, w - 32, 4, (160, 164, 168))
+    # big gold coin stack, right side
     for i in range(3):
-        cv.rect(x + w - 52, y + h - 22 - i * 7, 30, 5, (224, 168, 0))
-    cv.circle(x + w - 37, y + h - 46, 10, (224, 168, 0))
-    cv.ring(x + w - 37, y + h - 46, 10, (176, 130, 0), 1)
-    # small EU flag: blue field, ring of yellow dots
-    cv.rect(x + 14, y + 12, 26, 16, (0, 51, 153))
-    for dx, dy in [(5, 0), (4, 4), (0, 5), (-4, 4),
-                   (-5, 0), (-4, -4), (0, -5), (4, -4)]:
-        cv.rect(x + 27 + dx - 1, y + 20 + dy - 1, 2, 2, (255, 204, 0))
+        cv.rect(x + w - 56, y + h - 26 - i * 8, 34, 6, (224, 168, 0))
+    cv.circle(x + w - 39, y + h - 52, 13, (224, 168, 0))
+    cv.ring(x + w - 39, y + h - 52, 13, (176, 130, 0), 2)
+    cv.circle(x + w - 39, y + h - 52, 5, (176, 130, 0))
+    # EU flag, top left, larger with a ring of stars
+    cv.rect(x + 10, y + 10, 30, 19, (0, 51, 153))
+    for dx, dy in [(6, 0), (5, 4), (0, 6), (-5, 4),
+                   (-6, 0), (-5, -4), (0, -6), (5, -4)]:
+        cv.rect(x + 25 + dx - 1, y + 19 + dy - 1, 3, 3, (255, 204, 0))
 
 
 def scene_factory(cv, x, y, w, h):
     _sky(cv, x, y, w, h, (190, 190, 185), (150, 150, 145))
-    cv.rect(x + 16, y + h - 44, 110, 44, (120, 118, 112))
+    # tall chimneys with smoke puffs, left
+    cv.rect(x + 138, y + 8, 14, 62, (100, 98, 94))
+    cv.rect(x + 138, y + 8, 14, 5, (70, 68, 66))
+    cv.rect(x + 158, y + 18, 14, 52, (100, 98, 94))
+    cv.rect(x + 158, y + 18, 14, 5, (70, 68, 66))
+    for sx, sy, sr in [(x + 145, y + 2, 10), (x + 138, y + 6, 8),
+                       (x + 165, y + 6, 9), (x + 172, y + 2, 7)]:
+        cv.circle(sx, sy, sr, (110, 110, 108))
+    # factory block with a big sawtooth roof
+    cv.rect(x + 12, y + h - 46, 118, 46, (120, 118, 112))
     for i in range(4):
-        cv.poly([(x + 16 + i * 28, y + h - 44), (x + 30 + i * 28, y + h - 58),
-                 (x + 44 + i * 28, y + h - 44)], (90, 88, 84))
-    cv.rect(x + 140, y + h - 70, 12, 70, (100, 98, 94))
-    cv.rect(x + 156, y + h - 70, 12, 70, (100, 98, 94))
-    for fx in (x + 60, x + 150):
-        cv.poly([(fx - 12, y + h - 44), (fx, y + h - 78), (fx + 12, y + h - 44)],
-                (240, 120, 20))
-    cv.line(x + w - 60, y + h - 8, x + w - 20, y + h - 60, (220, 60, 30), 3)
-    cv.line(x + w - 52, y + h - 22, x + w - 28, y + h - 22, (220, 60, 30), 3)
+        cv.poly([(x + 12 + i * 30, y + h - 46), (x + 27 + i * 30, y + h - 64),
+                 (x + 42 + i * 30, y + h - 46)], (90, 88, 84))
+    for wx in (x + 24, x + 54, x + 84):
+        cv.rect(wx, y + h - 36, 14, 12, (240, 200, 60))
+    # large flames over the roof
+    for fx, fh in [(x + 52, 40), (x + 96, 48)]:
+        cv.poly([(fx - 14, y + h - 46), (fx, y + h - 46 - fh),
+                 (fx + 14, y + h - 46)], (240, 120, 20))
+        cv.poly([(fx - 7, y + h - 46), (fx, y + h - 46 - fh + 16),
+                 (fx + 7, y + h - 46)], (250, 200, 40))
+    # blue water jet from the right, arcing onto the flames
+    cv.line(x + w - 8, y + h - 6, x + w - 52, y + h - 58, (30, 110, 200), 4)
+    cv.circle(x + w - 54, y + h - 60, 4, (30, 110, 200))
+    cv.circle(x + w - 62, y + h - 52, 3, (90, 160, 230))
 
 
 def scene_flood(cv, x, y, w, h):
     _sky(cv, x, y, w, h, (140, 170, 200), (180, 200, 220))
-    cv.poly([(x, y + h - 30), (x + 60, y + 14), (x + 120, y + h - 30)], (110, 130, 150))
-    cv.poly([(x + 90, y + h - 30), (x + 170, y + 6), (x + 250, y + h - 30)], (90, 112, 135))
-    cv.poly([(x + 48, y + 14), (x + 60, y + 2), (x + 72, y + 14)], (255, 255, 255))
-    cv.poly([(x, y + h - 34), (x + 60, y + h - 46), (x + 120, y + h - 30),
-             (x + 180, y + h - 48), (x + w, y + h - 30), (x + w, y + h),
+    # two steep mountains with big snowcaps
+    cv.poly([(x, y + h - 36), (x + 62, y + 6), (x + 124, y + h - 36)], (110, 130, 150))
+    cv.poly([(x + 46, y + 6), (x + 62, y - 4), (x + 78, y + 6)], (255, 255, 255))
+    cv.poly([(x + 52, y + 16), (x + 62, y + 6), (x + 72, y + 16)], (235, 240, 245))
+    cv.poly([(x + 96, y + h - 36), (x + 172, y + 2), (x + 248, y + h - 36)], (90, 112, 135))
+    cv.poly([(x + 158, y + 2), (x + 172, y - 6), (x + 186, y + 2)], (255, 255, 255))
+    cv.poly([(x + 162, y + 12), (x + 172, y + 2), (x + 182, y + 12)], (235, 240, 245))
+    # wide muddy flood water with white crests, bottom third
+    cv.poly([(x, y + h - 40), (x + 60, y + h - 52), (x + 120, y + h - 36),
+             (x + 180, y + h - 54), (x + w, y + h - 36), (x + w, y + h),
              (x, y + h)], (122, 92, 60))
-    cv.rect(x + w - 70, y + h - 62, 34, 26, (200, 120, 70))
-    cv.poly([(x + w - 74, y + h - 62), (x + w - 53, y + h - 76),
-             (x + w - 32, y + h - 62)], (140, 50, 40))
+    cv.line(x + 6, y + h - 30, x + 90, y + h - 38, (240, 235, 220), 2)
+    cv.line(x + 110, y + h - 22, x + 190, y + h - 30, (240, 235, 220), 2)
+    cv.line(x + 30, y + h - 12, x + 130, y + h - 18, (200, 190, 170), 2)
+    # house half-submerged in the water, roof above the surface
+    cv.rect(x + w - 78, y + h - 58, 40, 30, (200, 120, 70))
+    cv.poly([(x + w - 84, y + h - 58), (x + w - 58, y + h - 76),
+             (x + w - 32, y + h - 58)], (140, 50, 40))
+    cv.rect(x + w - 64, y + h - 46, 10, 12, (60, 40, 30))
 
 
 def scene_blackout(cv, x, y, w, h):
     cv.rect(x, y, w, h, (18, 20, 30))
-    for bx in (x + 20, x + 80, x + 140, x + 200):
-        cv.rect(bx, y + h - 44, 30, 44, (40, 44, 58))
-        cv.rect(bx + 6, y + h - 38, 5, 5, (250, 204, 21))
-        cv.rect(bx + 18, y + h - 26, 5, 5, (60, 60, 70))
-    cv.poly([(x + 60, y + 8), (x + 44, y + 40), (x + 58, y + 40),
-             (x + 42, y + 72), (x + 74, y + 30), (x + 58, y + 30),
-             (x + 74, y + 8)], (250, 204, 21))
-    cv.line(x + 150, y + 14, x + 210, y + 30, (120, 120, 130), 2)
-    cv.line(x + 150, y + 30, x + 210, y + 14, (120, 120, 130), 2)
-    cv.rect(x + 146, y + 10, 6, 34, (120, 120, 130))
-    cv.rect(x + 208, y + 10, 6, 34, (120, 120, 130))
+    # dark skyline: most windows dead, a few lit yellow
+    for bx in (x + 12, x + 52, x + 92, x + 132, x + 172, x + 212):
+        bh = 44 if bx % 80 else 58
+        cv.rect(bx, y + h - bh, 30, bh, (40, 44, 58))
+        cv.rect(bx + 6, y + h - bh + 8, 5, 5, (250, 204, 21))
+        cv.rect(bx + 18, y + h - 20, 5, 5, (60, 60, 70))
+        cv.rect(bx + 6, y + h - 32, 5, 5, (60, 60, 70))
+    # big lightning bolt over the city
+    cv.poly([(x + 58, y + 4), (x + 40, y + 38), (x + 56, y + 38),
+             (x + 38, y + 72), (x + 76, y + 28), (x + 58, y + 28),
+             (x + 76, y + 4)], (250, 204, 21))
+    # transmission pylon with cross-arms and sagging lines
+    cv.rect(x + 196, y + 8, 6, 56, (120, 120, 130))
+    cv.rect(x + 182, y + 12, 34, 5, (120, 120, 130))
+    cv.rect(x + 186, y + 26, 26, 5, (120, 120, 130))
+    cv.line(x + 182, y + 14, x + 150, y + 30, (120, 120, 130), 2)
+    cv.line(x + 216, y + 14, x + 248, y + 30, (120, 120, 130), 2)
+    cv.rect(x, y + h - 6, w, 6, (10, 12, 18))
 
 
 def scene_ballot(cv, x, y, w, h):
     cv.rect(x, y, w, h, (240, 235, 215))
-    cv.rect(x, y, w, 10, (0, 122, 70))
-    cv.rect(x, y + 10, w, 6, (255, 255, 255))
-    cv.rect(x, y + 16, w, 6, (200, 40, 40))
-    cv.rect(x + w // 2 - 55, y + h - 58, 110, 58, (31, 78, 121))
-    cv.rect(x + w // 2 - 55, y + h - 58, 110, 10, (20, 50, 90))
-    cv.rect(x + w // 2 - 20, y + h - 72, 40, 16, (255, 255, 255))
-    cv.rect(x + w // 2 - 20, y + h - 72, 40, 4, (31, 78, 121))
-    cv.poly([(x + w // 2 - 40, y + h - 34), (x + w // 2 - 26, y + h - 16),
-             (x + w // 2 + 10, y + h - 46)], (255, 255, 255))
+    # South Africa flag stripes across the top
+    cv.rect(x, y, w, 9, (0, 122, 70))
+    cv.rect(x, y + 9, w, 5, (255, 255, 255))
+    cv.rect(x, y + 14, w, 9, (200, 40, 40))
+    cv.rect(x, y + 23, w, 5, (255, 255, 255))
+    cv.rect(x, y + 28, w, 9, (0, 40, 120))
+    # large ballot box with a white check
+    cx = x + w // 2
+    cv.rect(cx - 58, y + h - 52, 116, 52, (31, 78, 121))
+    cv.rect(cx - 58, y + h - 52, 116, 10, (20, 50, 90))
+    cv.rect(cx - 58, y + h - 52, 116, 3, (255, 255, 255))
+    cv.poly([(cx - 38, y + h - 28), (cx - 24, y + h - 10),
+             (cx + 16, y + h - 42)], (255, 255, 255))
+    # ballot slip dropping into the slot
+    cv.rect(cx - 18, y + h - 68, 36, 18, (255, 255, 255))
+    cv.rect(cx - 18, y + h - 68, 36, 4, (31, 78, 121))
+    cv.line(cx - 12, y + h - 58, cx + 12, y + h - 58, (180, 180, 180), 1)
 
 
 SCENES = {
@@ -809,7 +869,7 @@ def draw_card(cv, at, card, x, y, w, h, big):
     cv.rect(x, y + h - 1, w, 1, INK)
     cv.rect(x, y, 1, h, INK)
     cv.rect(x + w - 1, y, 1, h, INK)
-    scene_h = 76 if big == 1 else (30 if big == 2 else 30)
+    scene_h = 76 if big == 1 else (30 if big == 2 else 38)
     # scenes are drawn at a fixed 88px height, then scaled into the slot
     tmp = Canvas(w - 2, 88, (0, 0, 0))
     SCENES[card["scene"]](tmp, 0, 0, w - 2, 88)
@@ -848,7 +908,8 @@ def draw_card(cv, at, card, x, y, w, h, big):
     elif big == 2:
         drole, dlh, dmax = "gelasio12", 13, 2
     else:
-        drole, dlh, dmax = "gelasio12", 13, 0
+        # row 3 (v3): a real 1-2 line deck, like rows 1-2
+        drole, dlh, dmax = "gelasio12", 13, 2
     dlines = wrap(at, drole, card["deck"], w - 16)
     for ln in dlines[:dmax]:
         at.draw(cv, x + 8, ty, drole, ln, (60, 60, 60))
@@ -879,7 +940,7 @@ def render():
     counts = {}
     for c in CARDS:
         counts[c["region"]] = counts.get(c["region"], 0) + 1
-    for n, _code, _h, _a in ALSO:
+    for n, _head, _clause, _a in ALSO:
         pass
     also_regions = {
         14: "EUROPE", 15: "EUROPE", 16: "EUROPE", 17: "EUROPE",
@@ -931,19 +992,20 @@ def render():
         draw_card(cv, at, card, x, 444, 193, 126, 2)
     row3 = CARDS[8:13]
     for card, x in zip(row3, xs2):
-        draw_card(cv, at, card, x, 576, 193, 96, 3)
-    # ALSO + map band
-    at.draw(cv, 14, 680, "sansb11", "ALSO ON TUESDAY 24 NOVEMBER", NAVY)
-    cv.hline(14, 694, 636, INK, 1)
-    at.draw(cv, 664, 680, "sansb11", "WHERE IT HAPPENED", NAVY)
-    at.draw(cv, 664 + at.width("sansb11", "WHERE IT HAPPENED") + 8, 681,
+        draw_card(cv, at, card, x, 576, 193, 140, 3)
+    # ALSO + map band (row 3 grew +44: this band starts 42px lower and
+    # the map is 14px shorter; DATE CHECK + footer shift down with it)
+    at.draw(cv, 14, 722, "sansb11", "ALSO ON TUESDAY 24 NOVEMBER", NAVY)
+    cv.hline(14, 736, 636, INK, 1)
+    at.draw(cv, 664, 722, "sansb11", "WHERE IT HAPPENED", NAVY)
+    at.draw(cv, 664 + at.width("sansb11", "WHERE IT HAPPENED") + 8, 723,
             "sans9", "pins = story numbers", GRAY)
-    cv.hline(664, 694, W - 28 - 650, INK, 1)
+    cv.hline(664, 736, W - 28 - 650, INK, 1)
     cols = [ALSO[0:8], ALSO[8:15], ALSO[15:22]]
     colx = [14, 232, 450]
     for col, x0 in zip(cols, colx):
-        yy = 702
-        for n, code, head, attr in col:
+        yy = 744
+        for n, head, clause, attr in col:
             num = str(n)
             at.draw(cv, x0, yy, "bask11", num, NAVY)
             hx = x0 + 18
@@ -954,35 +1016,38 @@ def render():
             if htxt != head:
                 htxt = htxt + "\u2026"
             at.draw(cv, hx, yy, "bask11", htxt, INK)
-            at.draw(cv, hx, yy + 11, "sans8", attr, GRAY)
+            # line 2: the full-sentence clause + source, both sans8
+            cw = at.width("sans8", clause)
+            at.draw(cv, hx, yy + 11, "sans8", clause, (60, 60, 60))
+            at.draw(cv, hx + cw, yy + 11, "sans8", " \u00b7 " + attr, GRAY)
             yy += 21
-    draw_map(cv, 664, 700, 346, 162)
+    draw_map(cv, 664, 744, 346, 148)
     # date check
-    cv.rect(14, 874, W - 28, 68, (255, 255, 255))
-    cv.rect(14, 874, W - 28, 2, RED)
-    cv.rect(14, 940, W - 28, 2, RED)
-    cv.rect(14, 874, 2, 68, RED)
-    cv.rect(W - 16, 874, 2, 68, RED)
-    cv.rect(20, 880, at.width("sansb11", "DATE CHECK") + 12, 16, RED)
-    at.draw(cv, 26, 883, "sansb11", "DATE CHECK", (255, 255, 255))
+    cv.rect(14, 918, W - 28, 60, (255, 255, 255))
+    cv.rect(14, 918, W - 28, 2, RED)
+    cv.rect(14, 976, W - 28, 2, RED)
+    cv.rect(14, 918, 2, 60, RED)
+    cv.rect(W - 16, 918, 2, 60, RED)
+    cv.rect(20, 924, at.width("sansb11", "DATE CHECK") + 12, 16, RED)
+    at.draw(cv, 26, 927, "sansb11", "DATE CHECK", (255, 255, 255))
     lead = ("Every story on this page happened or was first reported on "
             "Tuesday 24 November 2026 (UTC). Left out because they happened "
             "on an earlier day: ")
     body = lead + DATE_CHECK_LEFT_OUT
     lines = wrap(at, "sans10", body, W - 28 - 24)
-    ly = 902
+    ly = 946
     for ln in lines[:3]:
         at.draw(cv, 20, ly, "sans10", ln, INK)
-        ly += 12
+        ly += 11
     # footer legend
     foot = ("HOW SURE: REPORTED = carried by the day\u2019s wires or officials \u00b7 "
             "CLAIM = one side\u2019s account, labelled as such \u00b7 ONGOING = still "
             "unfolding \u00b7 Scenes are drawn illustrations, not photographs.")
     flines = wrap(at, "roboto10", foot, W - 28)
-    fy = 950
+    fy = 984
     for ln in flines:
         text_center(at, cv, W // 2, fy, "roboto10", ln, GRAY)
-        fy += 12
+        fy += 11
     src = "Sources: Reuters \u00b7 BBC \u00b7 AP \u00b7 Yonhap \u00b7 Korea JoongAng Daily \u00b7 C54 \u00b7 FAA \u00b7 Careerindia \u00b7 Access24 \u00b7 FXStreet \u00b7 US Treasury"
     text_center(at, cv, W // 2, fy + 2, "roboto10", src, GRAY)
     return cv
