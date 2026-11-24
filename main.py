@@ -327,68 +327,61 @@ class Canvas:
 CARDS = [
     dict(n=1, region="WORLD", beat="TECH", place="NEW YORK",
          headline="Nvidia soars as Huang returns",
-         deck="Shares closed up 31% on Monday after the board restored "
-               "Jensen Huang as chief executive; the rally spread across "
-               "Asia on Tuesday.",
+         deck="On his first day back on Tuesday, Huang returned to "
+               "headquarters as shares held Monday's 31% gain and the "
+               "rally spread across Asia.",
          attr="Reuters \u00b7 CNN", status="REPORTED", scene="nvidia"),
     dict(n=2, region="ASIA", beat="SECURITY", place="ULLEUNGDO, SOUTH KOREA",
          headline="Russian jets trigger Korea alert",
          deck="Russian jets entered the air defence zone near Ulleung "
-               "Island; the shelter warning lasted five minutes. No "
-               "airspace violation, Seoul says.",
+               "Island, and the shelter warning lasted five minutes "
+               "with no airspace violation.",
          attr="Yonhap \u00b7 Korea JoongAng Daily", status="REPORTED", scene="jets"),
     dict(n=3, region="ASIA", beat="TRADE", place="TOKYO",
          headline="Trump unveils Japan trade deal",
-         deck="Washington announces a deal with Japan and terms with "
-               "Indonesia; Tokyo stocks lead an Asian rally while the EU "
-               "readies tariffs on $84bn of US goods.",
+         deck="Washington announced a Japan deal and Indonesia terms on "
+               "Tuesday, Tokyo stocks led an Asian rally, and the EU "
+               "readied tariffs on $84bn of US goods.",
          attr="Reuters \u00b7 Access24", status="REPORTED", scene="trade"),
     dict(n=4, region="WORLD", beat="CLIMATE", place="ANTALYA, T\u00dcRKIYE",
-         headline="After COP31 collapse, focus turns to reform",
-         deck="With no pact agreed on Sunday, UN climate chief Simon "
-               "Stiell says he will seek advice on fixing a process in "
-               "which one country can block a deal. COP32 meets in "
-               "Ethiopia in 2027.",
+         headline="After COP31, focus turns to reform",
+         deck="Stiell seeks advice on fixing a process one country can "
+               "block.",
          attr="BBC \u00b7 UN News", status="ONGOING", scene="cop"),
     dict(n=5, region="EUROPE", beat="WAR", place="NOVOSHAKHTINSK, RUSSIA",
-         headline="Refinery fire burns on after drone strike",
-         deck="The Novoshakhtinsk oil refinery is still ablaze after "
-               "Ukrainian long-range drones hit it overnight; the plant "
-               "has halted operations.",
+         headline="Refinery fire burns after drone strike",
+         deck="The refinery is still ablaze after the overnight drone "
+               "strike.",
          attr="Kyiv Independent \u00b7 Liveuamap", status="ONGOING", scene="refinery"),
-    dict(n=6, region="AFRICA", beat="DIPLOMACY", place="BENGHAZI, LIBYA",
-         headline="Libya east seeks UN probe over Ukraine claims",
-         deck="Authorities in eastern Libya ask the UN to investigate "
-               "reports of Ukrainian troops in the west, days after "
-               "Ukrainian sea drones struck Russian ships at Benghazi.",
-         attr="C54 \u00b7 Reuters", status="REPORTED", scene="probe"),
+    dict(n=6, region="MIDDLE EAST", beat="WAR", place="KHAN YOUNIS, GAZA",
+         headline="Israeli strike kills three in Gaza",
+         deck="Three died near a police post in Khan Younis.",
+         attr="Reuters", status="REPORTED", scene="gaza"),
     dict(n=7, region="AMERICAS", beat="TRANSPORT", place="CHICAGO, US",
-         headline="O'Hare ground stop lifted as holiday rush builds",
-         deck="The FAA briefly halted arrivals at Chicago O'Hare over "
-               "air traffic staffing on Monday; flights resumed ahead "
-               "of the Thanksgiving travel peak.",
+         headline="O'Hare stop lifted for holiday rush",
+         deck="The FAA lifted the stop ahead of the Thanksgiving travel "
+               "peak.",
          attr="FAA \u00b7 AP", status="REPORTED", scene="airport"),
     dict(n=8, region="AMERICAS", beat="POLITICS", place="WASHINGTON, US",
-         headline="Lawmakers protest Huang's return to Nvidia",
-         deck="Members of Congress object to the board reinstating "
-               "Jensen Huang, as the chipmaker's shares post their best "
-               "day since 2003.",
+         headline="Lawmakers protest Huang's return",
+         deck="Lawmakers object as Nvidia posts its best day since "
+               "2003.",
          attr="Reuters", status="REPORTED", scene="capitol"),
-    dict(n=9, region="ASIA", beat="DIPLOMACY", place="NEW DELHI, INDIA",
-         headline="India holds third place in Asia Power Index",
-         deck="India retains its ranking in the Lowy Institute index, "
-               "reflecting growing economic, diplomatic and military "
-               "weight in the region.",
-         attr="Careerindia \u00b7 Lowy Institute", status="REPORTED", scene="podium"),
+    dict(n=9, region="EUROPE", beat="ECONOMY", place="FRANKFURT, EU",
+         headline="EU leaders set to agree ECB team this week",
+         deck="Leaders are expected to agree a package for three ECB "
+               "board seats at their 26\u201327 November meeting, with "
+               "Hern\u00e1ndez de Cos tipped to succeed Lagarde.",
+         attr="FXStreet \u00b7 Reuters", status="REPORTED", scene="ecb"),
     dict(n=10, region="ASIA", beat="DISASTER", place="CIKANDE, INDONESIA",
          headline="Rescue goes on at factory fire site",
-         deck="Emergency teams keep searching for missing workers after "
-               "a major fire at an industrial facility; the cause is "
-               "under investigation.",
+         deck="Emergency teams kept searching for missing workers after "
+               "a major fire at an industrial facility, and the cause "
+               "is under investigation.",
          attr="Careerindia \u00b7 Antara", status="ONGOING", scene="factory"),
     dict(n=11, region="ASIA", beat="DISASTER", place="HIMALAYAS",
          headline="Himalayan flood: 4 dead, 100 missing",
-         deck="The army searches for scores of people unaccounted for "
+         deck="The army searched for scores of people unaccounted for "
                "after a wall of muddy water tore down a narrow mountain "
                "valley.",
          attr="Access24 \u00b7 AP", status="ONGOING", scene="flood"),
@@ -399,35 +392,35 @@ CARDS = [
          attr="C54 \u00b7 Reuters", status="REPORTED", scene="blackout"),
     dict(n=13, region="AFRICA", beat="POLITICS", place="PRETORIA, SOUTH AFRICA",
          headline="South Africans vote as ANC faces discontent",
-         deck="Voters go to the polls with service delivery failures "
-               "testing the governing party; police bar anti-migrant "
-               "rallies outside a court.",
+         deck="Voters went to the polls with service-delivery failures "
+               "testing the governing party, and police barred "
+               "anti-migrant rallies outside a court.",
          attr="C54 \u00b7 Reuters", status="REPORTED", scene="ballot"),
 ]
 
 ALSO = [
-    (14, "IN", "Typhoid jabs for 50M children", "Access24"),
-    (15, "JP", "SoftBank to invest $2bn in Intel", "Access24"),
-    (16, "NE", "Niger: Europe plans evacuations", "C54"),
-    (17, "FR", "Macron: Niger coup dangerous", "C54"),
-    (18, "TZ", "Tanzania treason charge filed", "C54"),
-    (19, "KE", "Kenya secures 293,600 Saudi jobs", "C54"),
-    (20, "GH", "Ghana unveils Heritage banknotes", "C54"),
+    (14, "FR", "Macron: Niger coup dangerous", "C54"),
+    (15, "UA", "Fresh Russian attacks near Kyiv", "Careerindia"),
+    (16, "FI", "Ship fire in Gulf of Finland", "Careerindia"),
+    (17, "EU", "EU readies $84bn tariff retaliation", "Reuters"),
+    (18, "IR", "US hits 35 Iran shadow banks", "US Treasury"),
+    (19, "QA", "Hamas yet to answer truce offer", "Arab Press"),
+    (20, "SY", "Koya families flee Israeli raids", "Starlit Daily"),
     (21, "CD", "DRC enacts constitutional reform", "C54"),
-    (22, "KE", "Kenya discharges last Ebola case", "C54"),
-    (23, "TD", "Drone strike kills four in Chad", "C54"),
-    (24, "ZA", "Tyla, Tems, Kidjo eye Grammys", "C54"),
-    (25, "IR", "Iran vows reply to US sanctions", "Reuters"),
-    (26, "IN", "India energy import bill rises", "Careerindia"),
-    (27, "UA", "Fresh Russian attacks near Kyiv", "Careerindia"),
-    (28, "FI", "Ship fire in Gulf of Finland", "Careerindia"),
+    (22, "KE", "Kenya secures 293,600 Saudi jobs", "C54"),
+    (23, "KE", "Kenya discharges last Ebola case", "C54"),
+    (24, "TD", "Drone strike kills four in Chad", "C54"),
+    (25, "NG", "Nigeria starts building warships", "C54"),
+    (26, "IN", "Typhoid jabs for 50M children", "Access24"),
+    (27, "JP", "SoftBank to invest $2bn in Intel", "Access24"),
+    (28, "IN", "India energy import bill rises", "Careerindia"),
     (29, "IN", "Gukesh begins chess title defence", "Careerindia"),
-    (30, "IN", "India win NZ hockey series 1-0", "Careerindia"),
-    (31, "US", "74% of Latinos report ICE activity", "Reuters"),
-    (32, "ZA", "Four ANC youth killed pre-polls", "C54"),
-    (33, "NG", "Nigeria starts building warships", "C54"),
-    (34, "ET", "Tigray mayor promises swift polls", "C54"),
-    (35, "AU", "Australia on top in Test decider", "C54"),
+    (30, "US", "74% of Latinos report ICE activity", "Reuters"),
+    (31, "US", "Giuliani gets Medal of Freedom", "CNN"),
+    (32, "US", "Trump to meet NATO chief Rutte", "Reuters"),
+    (33, "US", "Trump speeds up executions", "DPA"),
+    (34, "AU", "Australia on top in Test decider", "C54"),
+    (35, "AU", "Australia fines Big Tech up to 5%", "Reuters"),
 ]
 
 NUMBERS = [
@@ -436,7 +429,7 @@ NUMBERS = [
     ("293,600", "Saudi jobs secured by Kenya"),
     ("$2BN", "SoftBank investment in Intel"),
     ("50M", "children in typhoid drive"),
-    ("5,300+", "DRC Ebola deaths"),
+    ("9,000", "Ulleungdo residents told to shelter"),
 ]
 
 TIMELINE = [
@@ -449,8 +442,8 @@ TIMELINE = [
 
 PINS = [  # (story number, lon, lat)
     (1, -95, 38), (2, 130, 37.5), (3, 139, 35), (4, 30.7, 36.9),
-    (5, 39.9, 47.7), (6, 20, 32), (7, -87.6, 41.9), (8, -77, 38.9),
-    (9, 77.2, 28.6), (10, 106.3, -6.3), (11, 85, 28), (12, 32.5, 15.6),
+    (5, 39.9, 47.7), (6, 34.45, 31.35), (7, -87.6, 41.9), (8, -77, 38.9),
+    (9, 8.68, 50.11), (10, 106.3, -6.3), (11, 85, 28), (12, 32.5, 15.6),
     (13, 28.2, -25.7),
 ]
 
@@ -458,9 +451,9 @@ DATE_CHECK_LEFT_OUT = (
     "COP31 collapse, 22 Nov \u00b7 Hong Kong turnout 98.79%, 22 Nov \u00b7 "
     "Liverpool 4\u20130 Man Utd, 22 Nov \u00b7 Verstappen Las Vegas GP, 22 Nov \u00b7 "
     "Alcaraz ATP Finals, 22\u201323 Nov \u00b7 India 720/9 Test draw, 23 Nov \u00b7 "
-    "Cikande fire starts, 22 Nov \u00b7 ICE Seattle arrests, 21 Nov \u00b7 "
-    "Russian toll study, 23 Nov \u00b7 Libya ship strikes, 23 Nov \u00b7 "
-    "O'Hare stop, 23 Nov \u00b7 Poland missiles, 20 Nov \u00b7 ICJ Rohingya ruling, "
+    "ICE Seattle arrests, 21 Nov \u00b7 Russian toll study, 23 Nov \u00b7 "
+    "Libya ship strikes, 23 Nov \u00b7 Brazil storm, 20 Nov \u00b7 Iran blockade "
+    "warning, 23 Nov \u00b7 Poland missiles, 20 Nov \u00b7 ICJ Rohingya ruling, "
     "19 Nov \u00b7 Huang resigns, 12 Nov"
 )
 
@@ -557,17 +550,48 @@ def _sky(cv, x, y, w, h, top, bot):
 def scene_nvidia(cv, x, y, w, h):
     cv.rect(x, y, w, h, (16, 24, 40))
     cv.rect(x, y + h - 26, w, 26, (10, 16, 28))
-    bars = [18, 30, 26, 44, 58, 76]
+    bars = [14, 22, 20, 32, 42, 52]
     bw = (w - 40) // len(bars)
     for i, bh in enumerate(bars):
         bx = x + 20 + i * bw
         cv.rect(bx + 2, y + h - 26 - bh, bw - 6, bh, (34, 197, 94) if i < 5 else (118, 230, 150))
-    cv.line(x + 22, y + h - 26 - 76, x + w - 22, y + 18, (250, 204, 21), 2)
-    cv.circle(x + w - 22, y + 18, 5, (250, 204, 21))
+    # trend line RISES with the bars (low left, high right)
+    cv.line(x + 22, y + h - 32, x + w - 22, y + 14, (250, 204, 21), 2)
+    cv.circle(x + w - 22, y + 14, 5, (250, 204, 21))
+    cv.circle(x + 22, y + h - 32, 4, (250, 204, 21))
     # chip
     cv.rect(x + 16, y + 12, 34, 34, (34, 197, 94))
     cv.rect(x + 24, y + 20, 18, 18, (16, 24, 40))
     cv.rect(x + 28, y + 24, 10, 10, (118, 230, 150))
+
+
+def _jet(cv, nx, ny, s, body=(232, 232, 232), dark=(70, 80, 95)):
+    """A jet aircraft in right-facing profile. (nx, ny) = nose tip,
+    s = length in px. Pointed nose, fuselage, cockpit, swept wing,
+    tail fin, tailplane and a short contrail."""
+    L = float(s)
+
+    def P(fx, fy):
+        return (int(nx + fx * L), int(ny + fy * L))
+
+    # fuselage: pointed nose, straight body, flat tail
+    cv.poly([P(0, 0.02), P(-0.55, -0.02), P(-0.85, 0.0), P(-0.85, 0.10),
+             P(-0.55, 0.12), P(0, 0.08)], body)
+    # cockpit windows near the nose
+    cv.poly([P(-0.18, 0.01), P(-0.08, 0.015), P(-0.08, 0.05),
+             P(-0.18, 0.05)], (30, 60, 110))
+    # tail fin (vertical stabiliser) rising from the rear top
+    cv.poly([P(-0.62, 0.0), P(-0.78, -0.30), P(-0.70, -0.30),
+             P(-0.55, 0.0)], dark)
+    # swept main wing below the fuselage
+    cv.poly([P(-0.30, 0.10), P(-0.52, 0.42), P(-0.38, 0.42),
+             P(-0.18, 0.10)], body)
+    # tailplane
+    cv.poly([P(-0.68, 0.08), P(-0.82, 0.24), P(-0.74, 0.24),
+             P(-0.60, 0.08)], body)
+    # engine exhaust + short contrail behind the tail
+    cv.rect(int(nx - 0.98 * L), int(ny + 0.03 * L), int(0.13 * L), 3,
+            (255, 255, 255))
 
 
 def scene_jets(cv, x, y, w, h):
@@ -576,12 +600,9 @@ def scene_jets(cv, x, y, w, h):
     cv.poly([(x + 8, y + h - 8), (x + w // 2 - 10, y + h - 34),
              (x + w - 8, y + h - 8)], (46, 90, 60))
     cv.rect(x + w // 2 - 14, y + h - 52, 28, 20, (46, 90, 60))
-    for jx, jy, s in [(x + 40, y + 22, 1), (x + 90, y + 40, 1), (x + 150, y + 16, 1)]:
-        cv.poly([(jx, jy), (jx + 26 * s, jy + 7), (jx + 4, jy + 12)], (230, 230, 230))
-        cv.poly([(jx + 4, jy + 12), (jx + 12, jy + 18), (jx, jy + 16)], (200, 200, 200))
-    cv.poly([(x + w - 34, y + h - 40), (x + w - 14, y + h - 40),
-             (x + w - 24, y + h - 12)], RED)
-    cv.rect(x + w - 30, y + h - 44, 12, 4, (255, 255, 255))
+    cv.circle(x + w // 2, y + h - 54, 3, RED)
+    _jet(cv, x + 132, y + 28, 70)
+    _jet(cv, x + 72, y + 54, 44, (205, 205, 205), (60, 68, 82))
 
 
 def scene_trade(cv, x, y, w, h):
@@ -632,19 +653,24 @@ def scene_refinery(cv, x, y, w, h):
     cv.rect(x, y + h - 8, w, 8, (60, 56, 62))
 
 
-def scene_probe(cv, x, y, w, h):
-    cv.rect(x, y, w, h, (28, 68, 120))
-    cv.rect(x + 14, y + h - 34, w - 28, 8, (230, 230, 230))
-    for i in range(4):
-        cx = x + 34 + i * 58
-        cv.rect(cx, y + h - 58, 10, 26, (230, 230, 230))
-    cv.rect(x + 14, y + h - 64, w - 28, 8, (230, 230, 230))
-    cv.poly([(x + w // 2 - 60, y + h - 64), (x + w // 2 + 60, y + h - 64),
-             (x + w // 2 + 40, y + h - 78), (x + w // 2 - 40, y + h - 78)],
-            (200, 210, 225))
-    cv.circle(x + w - 52, y + 30, 20, (255, 255, 255))
-    cv.circle(x + w - 52, y + 30, 16, (28, 68, 120))
-    cv.line(x + w - 38, y + 44, x + w - 22, y + 60, (255, 255, 255), 3)
+def scene_gaza(cv, x, y, w, h):
+    _sky(cv, x, y, w, h, (196, 160, 120), (150, 130, 110))
+    # flat-roofed skyline
+    for bx, bw, bh in [(8, 34, 34), (48, 26, 46), (80, 40, 30), (126, 30, 52),
+                       (162, 36, 38), (204, 28, 48), (238, 40, 32)]:
+        cv.rect(x + bx, y + h - bh, bw, bh, (70, 66, 72))
+        cv.rect(x + bx, y + h - bh, bw, 3, (52, 48, 52))
+    # smoke column rising over one roof
+    for sx, sy, sr in [(x + 140, y + h - 66, 9), (x + 146, y + h - 78, 11),
+                       (x + 138, y + h - 90, 8)]:
+        cv.circle(sx, sy, sr, (120, 116, 118))
+    # small drone in the sky
+    dx, dy = x + w - 70, y + 16
+    cv.rect(dx - 8, dy, 16, 4, (40, 40, 40))
+    cv.rect(dx - 2, dy + 4, 4, 6, (40, 40, 40))
+    cv.rect(dx - 16, dy - 2, 10, 2, (40, 40, 40))
+    cv.rect(dx + 6, dy - 2, 10, 2, (40, 40, 40))
+    cv.rect(x, y + h - 6, w, 6, (52, 48, 52))
 
 
 def scene_airport(cv, x, y, w, h):
@@ -674,16 +700,27 @@ def scene_capitol(cv, x, y, w, h):
     cv.rect(x + w - 44, y + 44, 30, 6, (255, 255, 255))
 
 
-def scene_podium(cv, x, y, w, h):
-    cv.rect(x, y, w, h, (235, 228, 210))
-    cv.rect(x + 30, y + h - 46, 44, 46, (180, 180, 180))
-    cv.rect(x + 92, y + h - 66, 44, 66, (224, 168, 0))
-    cv.rect(x + 154, y + h - 34, 44, 34, (150, 120, 90))
-    cv.circle(x + 114, y + 22, 18, (224, 168, 0))
-    cv.poly([(x + 114, y + 8), (x + 118, y + 18), (x + 129, y + 18),
-             (x + 120, y + 25), (x + 123, y + 36), (x + 114, y + 30),
-             (x + 105, y + 36), (x + 108, y + 25), (x + 99, y + 18),
-             (x + 110, y + 18)], (255, 255, 255))
+def scene_ecb(cv, x, y, w, h):
+    cv.rect(x, y, w, h, (222, 228, 232))
+    # bank facade: pediment + columns + steps
+    cx = x + w // 2
+    cv.poly([(cx - 66, y + 30), (cx + 66, y + 30), (cx, y + 8)], (31, 78, 121))
+    cv.rect(cx - 66, y + 30, 132, 5, (31, 78, 121))
+    for i in range(4):
+        cv.rect(cx - 56 + i * 30, y + 35, 10, 30, (240, 240, 240))
+    cv.rect(cx - 66, y + 65, 132, 4, (31, 78, 121))
+    cv.rect(x + 14, y + h - 14, w - 28, 5, (180, 184, 188))
+    cv.rect(x + 22, y + h - 9, w - 44, 4, (160, 164, 168))
+    # coin stack + one big coin
+    for i in range(3):
+        cv.rect(x + w - 52, y + h - 22 - i * 7, 30, 5, (224, 168, 0))
+    cv.circle(x + w - 37, y + h - 46, 10, (224, 168, 0))
+    cv.ring(x + w - 37, y + h - 46, 10, (176, 130, 0), 1)
+    # small EU flag: blue field, ring of yellow dots
+    cv.rect(x + 14, y + 12, 26, 16, (0, 51, 153))
+    for dx, dy in [(5, 0), (4, 4), (0, 5), (-4, 4),
+                   (-5, 0), (-4, -4), (0, -5), (4, -4)]:
+        cv.rect(x + 27 + dx - 1, y + 20 + dy - 1, 2, 2, (255, 204, 0))
 
 
 def scene_factory(cv, x, y, w, h):
@@ -744,8 +781,8 @@ def scene_ballot(cv, x, y, w, h):
 
 SCENES = {
     "nvidia": scene_nvidia, "jets": scene_jets, "trade": scene_trade,
-    "cop": scene_cop, "refinery": scene_refinery, "probe": scene_probe,
-    "airport": scene_airport, "capitol": scene_capitol, "podium": scene_podium,
+    "cop": scene_cop, "refinery": scene_refinery, "gaza": scene_gaza,
+    "airport": scene_airport, "capitol": scene_capitol, "ecb": scene_ecb,
     "factory": scene_factory, "flood": scene_flood, "blackout": scene_blackout,
     "ballot": scene_ballot,
 }
@@ -772,7 +809,7 @@ def draw_card(cv, at, card, x, y, w, h, big):
     cv.rect(x, y + h - 1, w, 1, INK)
     cv.rect(x, y, 1, h, INK)
     cv.rect(x + w - 1, y, 1, h, INK)
-    scene_h = 76 if big == 1 else (42 if big == 2 else 30)
+    scene_h = 76 if big == 1 else (30 if big == 2 else 30)
     # scenes are drawn at a fixed 88px height, then scaled into the slot
     tmp = Canvas(w - 2, 88, (0, 0, 0))
     SCENES[card["scene"]](tmp, 0, 0, w - 2, 88)
@@ -809,7 +846,7 @@ def draw_card(cv, at, card, x, y, w, h, big):
     if big == 1:
         drole, dlh, dmax = "gelasio13", 15, 3
     elif big == 2:
-        drole, dlh, dmax = "gelasio12", 13, 1
+        drole, dlh, dmax = "gelasio12", 13, 2
     else:
         drole, dlh, dmax = "gelasio12", 13, 0
     dlines = wrap(at, drole, card["deck"], w - 16)
@@ -845,11 +882,12 @@ def render():
     for n, _code, _h, _a in ALSO:
         pass
     also_regions = {
-        14: "ASIA", 15: "ASIA", 16: "AFRICA", 17: "EUROPE", 18: "AFRICA",
-        19: "AFRICA", 20: "AFRICA", 21: "AFRICA", 22: "AFRICA", 23: "AFRICA",
-        24: "AFRICA", 25: "MIDDLE EAST", 26: "ASIA", 27: "EUROPE",
-        28: "EUROPE", 29: "ASIA", 30: "ASIA", 31: "AMERICAS", 32: "AFRICA",
-        33: "AFRICA", 34: "AFRICA", 35: "OCEANIA",
+        14: "EUROPE", 15: "EUROPE", 16: "EUROPE", 17: "EUROPE",
+        18: "MIDDLE EAST", 19: "MIDDLE EAST", 20: "MIDDLE EAST",
+        21: "AFRICA", 22: "AFRICA", 23: "AFRICA", 24: "AFRICA",
+        25: "AFRICA", 26: "ASIA", 27: "ASIA", 28: "ASIA", 29: "ASIA",
+        30: "AMERICAS", 31: "AMERICAS", 32: "AMERICAS", 33: "AMERICAS",
+        34: "OCEANIA", 35: "OCEANIA",
     }
     for n, reg in also_regions.items():
         counts[reg] = counts.get(reg, 0) + 1
@@ -945,7 +983,7 @@ def render():
     for ln in flines:
         text_center(at, cv, W // 2, fy, "roboto10", ln, GRAY)
         fy += 12
-    src = "Sources: Reuters \u00b7 BBC \u00b7 AP \u00b7 Yonhap \u00b7 Korea JoongAng Daily \u00b7 C54 \u00b7 FAA \u00b7 Careerindia \u00b7 Access24"
+    src = "Sources: Reuters \u00b7 BBC \u00b7 AP \u00b7 Yonhap \u00b7 Korea JoongAng Daily \u00b7 C54 \u00b7 FAA \u00b7 Careerindia \u00b7 Access24 \u00b7 FXStreet \u00b7 US Treasury"
     text_center(at, cv, W // 2, fy + 2, "roboto10", src, GRAY)
     return cv
 
